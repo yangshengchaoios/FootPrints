@@ -1,0 +1,33 @@
+platform :ios, '7.0'
+
+pod 'AFNetworking', :head
+
+pod 'FMDB', '~> 2.2'
+
+pod 'SDURLCache', :head
+
+pod 'JSONModel', :head
+
+pod 'SDWebImage', :head
+
+pod 'MBProgressHUD', :head
+
+pod 'BlocksKit', :head
+
+pod 'ADTransitionController', :head
+
+pod 'UIImage-Resize', :head
+
+pod 'UIImage-Categories', :head
+
+pod 'PPiFlatSegmentedControl', :head
+
+pod 'CXPhotoBrowser', :head
+
+pod 'Canvas', :head
+
+pod 'JSCustomBadge', :head
+
+pod 'HMSegmentedControl', :head
+
+pod 'Masonry', '~> 0.5.3'

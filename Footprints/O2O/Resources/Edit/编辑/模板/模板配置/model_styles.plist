@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>styleName</key>
+		<string>model_style_3.plist</string>
+		<key>cover</key>
+		<string>thumbnail_3.png</string>
+	</dict>
+	<dict>
+		<key>styleName</key>
+		<string>model_style_2.plist</string>
+		<key>cover</key>
+		<string>thumbnail_2.png</string>
+	</dict>
+	<dict>
+		<key>styleName</key>
+		<string>model_style_4.plist</string>
+		<key>cover</key>
+		<string>thumbnail_4.png</string>
+	</dict>
+	<dict>
+		<key>styleName</key>
+		<string>model_style_5.plist</string>
+		<key>cover</key>
+		<string>thumbnail_5.png</string>
+	</dict>
+	<dict>
+		<key>styleName</key>
+		<string>model_style_6.plist</string>
+		<key>cover</key>
+		<string>thumbnail_6.png</string>
+	</dict>
+	<dict>
+		<key>styleName</key>
+		<string>model_style_8.plist</string>
+		<key>cover</key>
+		<string>thumbnail_8.png</string>
+	</dict>
+</array>
+</plist>

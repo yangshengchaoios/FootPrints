@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>APPBaseUrl</key>
+	<string>http://121.42.41.103:56112/FootprintService/</string>
+	<key>APPItunesId</key>
+	<string>123</string>
+	<key>kShareSDKKey</key>
+	<string>4ba487a1bb16</string>
+	<key>kSocialQQId</key>
+	<string>1103675394</string>
+	<key>kSocialQQKey</key>
+	<string>kQPwvIz1UpRKC5Kf</string>
+	<key>kSocialSinaId</key>
+	<string>2588309835</string>
+	<key>kSocialSinaKey</key>
+	<string>de552bc3c98d94f7c7dce970a1b02c58</string>
+	<key>kSocialSinaBackUrl</key>
+	<string>http://www.gajent.com/appauth</string>
+	<key>kSocialWeixinId</key>
+	<string>wx6de568d21fa5f9b7</string>
+	<key>kSocialWeixinKey</key>
+	<string>34823f304a4ca3062c31513166d11fef</string>
+	<key>kSocialShareURL</key>
+	<string>kSocialShareURL</string>
+</dict>
+</plist>

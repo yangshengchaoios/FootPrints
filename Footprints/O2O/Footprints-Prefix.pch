@@ -1,0 +1,209 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <objc/runtime.h>
+    #import "DataModels.h"
+    #import "UrlConstants.h"
+    #import <SDWebImage/UIImageView+WebCache.h>
+    #import "UIButton+WebCache.h"
+    #import "NSString+SBJSON.h"
+    #import "NSObject+SBJSON.h"
+    #import "UIImageView+Cache.h"
+    #import "StringUtils.h"
+    #import "ImageUtils.h"
+    #import <BlocksKit/BlocksKit+UIKit.h>
+    #import "AFNManager.h"
+    #import "LogManager.h"
+    #import "StorageManager.h"
+    #import "UserManager.h"
+    #import "JJServerTimeUtils.h"
+    #import <Masonry/Masonry.h>
+    #import "AudioUtils.h"
+    #import "JJAvatarView.h"
+    #import "NewGuyHelper.h"
+#endif
+
+
+#define kHeaderScale          (568/150.0)
+#define kSegmentHeight        50
+#define kBannerHeight (SCREEN_HEIGHT/kHeaderScale)
+#define kHeaderOffset (kBannerHeight+kSegmentHeight)
+
+#define kErrCodeLoginTimeOut  20001
+#define kCountPerPage         20
+#define kCountDownTime        60
+#define WeakSelfType __weak __typeof(&*self)
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+
+/**
+ *  重新定义NSLog
+ */
+#define __NSLog(s, ...) do { \
+NSLog(@"[%@(%d)] %@",[[NSString stringWithUTF8String:__FILE__] lastPathComponent],__LINE__,[NSString stringWithFormat:(s), ##__VA_ARGS__]); \
+} while (0)
+#define NSLog(...) __NSLog(__VA_ARGS__)
+
+/**
+ *  判断设备的相关参数
+ */
+#pragma mark - Device
+
+#define IOS7                    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) //是否是IOS7
+#define SCREEN_WIDTH            ([UIScreen mainScreen].bounds.size.width) //屏幕的宽度
+#define SCREEN_HEIGHT           ([UIScreen mainScreen].bounds.size.height)//屏幕的高度
+#define STATUSBAR_HEIGHT        20.0f
+#define NAVIGATIONBAR_HEIGHT    44.0f
+#define TITLEBAR_HEIGHT         64.0f       //等于STATUSBAR_HEIGHT + NAVIGATIONBAR_HEIGHT
+#define TABBAR_HEIGHT           49.0f
+
+/**
+ *  定义单例
+ */
+#pragma mark - Singleton
+
+#define DEFINE_SHARED_INSTANCE_USING_BLOCK(block) \
+static dispatch_once_t pred = 0; \
+__strong static id _sharedObject = nil; \
+dispatch_once(&pred, ^{ \
+_sharedObject = block(); \
+}); \
+return _sharedObject; \
+
+/**
+ *  注册通知与发送通知
+ */
+#pragma mark - Notification
+
+#define addNObserver(_selector,_name) ([[NSNotificationCenter defaultCenter] addObserver:self selector:_selector name:_name object:nil])
+#define removeNObserver(_name) ([[NSNotificationCenter defaultCenter] removeObserver:self name:_name object:nil])
+#define postN(_name) ([[NSNotificationCenter defaultCenter] postNotificationName:_name object:nil userInfo:nil])
+#define postNWithObj(_name,_obj) ([[NSNotificationCenter defaultCenter] postNotificationName:_name object:_obj userInfo:nil])
+#define postNWithInfo(_name,_info) ([[NSNotificationCenter defaultCenter] postNotificationName:_name object:nil userInfo:_info])
+
+/**
+ *  通过xib加载view
+ */
+#pragma mark - view in xib
+
+#define ViewInXib(_xibName, _index) \
+[[[NSBundle mainBundle] loadNibNamed:_xibName owner:nil options:nil] objectAtIndex:_index]
+
+
+
+
+/**
+ *  特殊函数
+ */
+#pragma mark - special methods
+
+#define USERID                          [[Login sharedInstance] userId] //1185-13568945082
+#define RGB(r, g, b)                    [UIColor colorWithRed:r / 255.0f green:g / 255.0f blue:b / 255.0f alpha:1.0f]
+#define RGBA(r, g, b, a)                [UIColor colorWithRed:r / 255.0f green:g / 255.0f blue:b / 255.0f alpha:a]
+#define BrowseHistoryCachedPath         [[[StorageManager sharedInstance] cachesDirectoryPathCommon] stringByAppendingPathComponent:@"BrowseHistoryKey.dat"]
+#define AppVersion                      [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] //发行版本号
+#define BundleVersion                   [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]  //内部版本号
+#define kLocalNotiHUDComeOut @"LocalNotiHUDComeOut"     //HUD出现通知
+
+/**
+ *  颜色及相关默认值定义
+ */
+#pragma mark - Color defines
+
+#define kDefaultViewColor               RGB(239, 239, 244)      //self.view的默认背景颜色
+#define kDefaultTitleBarColor           RGB(234, 106, 84)       //导航栏的默认颜色
+#define kDefaultStatusBarColor          RGBA(29, 124, 152,1)       //状态栏默认颜色
+#define kDefaultNaviBarColor            RGBA(29, 124, 152,1)   //设置navigationBar默认颜色(包括了StatusBar)
+#define kDefaultTextColor               RGB(126, 127, 140)      //设置文字默认颜色
+#define kDefaultTextColor1              RGB(122, 122, 122)
+#define kDefaultEmptyTextColor          RGB(122, 122, 122)      //列表为空时的提醒文字颜色
+#define kDefaultBorderColor             RGB(191, 191, 191)
+#define kDefaultLineColor               [UIColor colorWithWhite:0.8f alpha:1.0f]
+#define kDefaultBorderWidth             0.65f
+/**
+ *  定义随机颜色
+ */
+#define kDefaultRandom                  [NSArray arrayWithObjects:RGB(95, 148, 193),RGB(115, 166, 86),RGB(248, 128, 51),RGB(129, 149, 57), nil]
+
+
+/**
+ *  字体及相关默认值定义
+ */
+#pragma mark - Font defines
+
+#define kDefaultTextFont13              [UIFont systemFontOfSize:13]
+#define kDefaultTextFont                [UIFont systemFontOfSize:14]        //设置默认字体大小
+#define kDefaultTextFont15              [UIFont systemFontOfSize:15]        //设置默认字体大小
+#define kDefaultTextFont16              [UIFont systemFontOfSize:16]        //设置默认字体大小
+#define kDefaultBoldTextFont            [UIFont boldSystemFontOfSize:14]    //设置默认的粗体字体大小
+
+
+/**
+ *  定义常量默认值
+ */
+#pragma mark - define default value
+#define kUserToken                      [UserManager loginUserToken] 
+#define kAppSignature                   @"预留-APP接口签名" //TODO
+#define kAppVersion                     [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString*)kCFBundleVersionKey]
+#define kDefaultAppType                 @"Footprints-IOS"
+#define kDefaultPageSize                @"20"
+#define DefaultAnimationDuration        0.3f
+#define kPlaceHolderImage               [UIImage imageNamed:@"all_placeholder.png"]
+
+/**
+ *  定义常量字符串
+ */
+#pragma mark - define constants
+
+#define APPSTORE_ID                     @"862291085" //TODO
+#define AppScheme                       @"JJFootprints"
+#define kCellIdentifier                 @"cell"
+#define kFooterIdentifier               @"footer"
+#define kHeaderIdentifier               @"header"
+#define kItemCellIdentifier             @"itemCell"     //UICollectionView要用的
+#define kRecentlyKeys                   @"RecentlySearchingKeys"
+#define kCachedBrowseHistory            @"CachedBrowseHistory"
+
+
+/**
+ *  定义通知
+ */
+#pragma mark - Notification Name
+
+#define kShowHomePageNotification @"kShowHomePageNotification"
+
+#define kCountDownFinishNotification @"CountDownFinishNotification"
+
+#define PlayAudioDidEndNotification         @"PlayAudioDidEndNotification"
+#define PlayAudioDidStartNotification       @"PlayAudioDidStartNotification"
+
+#define LoginUserModelDidChangeNotification @"LoginUserModelDidChangeNotification"
+
+
+
+//-------------------MWB Add----------------//
+//设置frame
+#define MakeFrame(x,y,width,height) CGRectMake(x,y,width,height)
+//X
+#define ControlX(name) name.frame.origin.x
+//Y
+#define ControlY(name) name.frame.origin.y
+//width
+#define ControlWidth(name) name.frame.size.width
+//height
+#define ControlHeight(name) name.frame.size.height
+
+#define ImageFileName(name) [UIImage imageNamed:name]
+
+//-------------------MWB Add----------------//

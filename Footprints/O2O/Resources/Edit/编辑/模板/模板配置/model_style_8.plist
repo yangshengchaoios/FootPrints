@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SuperViewInfo</key>
+	<dict>
+		<key>background</key>
+		<string>background_color_8.png</string>
+		<key>cover</key>
+		<string>poster_8.png</string>
+		<key>size</key>
+		<string>{640, 1008}</string>
+	</dict>
+	<key>SubViewArray</key>
+	<array>
+		<dict>
+			<key>defaultType</key>
+			<integer>3</integer>
+			<key>default</key>
+			<string>添加文字</string>
+			<key>type</key>
+			<integer>2</integer>
+			<key>font</key>
+			<string>HelveticalNeue LT 25 UltLight</string>
+			<key>fontSize</key>
+			<string>30</string>
+			<key>origin</key>
+			<string>{120,26}</string>
+			<key>size</key>
+			<string>{400,40}</string>
+			<key>color</key>
+			<string>87,87,87,1</string>
+			<key>aligent</key>
+			<string>1</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<integer>1</integer>
+			<key>origin</key>
+			<string>{0,100}</string>
+			<key>size</key>
+			<string>{640,720}</string>
+		</dict>
+	</array>
+</dict>
+</plist>

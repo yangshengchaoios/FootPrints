@@ -1,0 +1,19 @@
+<MKM version="2.0" imageFileUrl="file:///C:/Users/LQ/Desktop/ios%e5%88%87%e5%9b%be_1/1%e8%b6%b3%e8%bf%b9/%e7%99%bb%e9%99%86/2%e6%b3%a8%e5%86%8c/%e6%89%8b%e6%9c%ba%e5%bf%ab%e9%80%9f%e6%b3%a8%e5%86%8c_%e6%a0%87%e8%ae%b0.png">
+  <Marks>
+    <LengthMark direction="3" color="16711680" length="72" x="100" y="128"/>
+    <LengthMark direction="3" color="16711680" length="40" x="274" y="271"/>
+    <LengthMark direction="3" color="16711680" length="70" x="515" y="201"/>
+    <LengthMark direction="12" color="16711680" length="50" x="0" y="227"/>
+    <LengthMark direction="12" color="16711680" length="20" x="391" y="346"/>
+    <LengthMark direction="3" color="16711680" length="14" x="342" y="382"/>
+    <RectMark color="16711680" x="44" y="446" offsetX="0" offsetY="0"/>
+    <RectMark color="16711680" x="50" y="200" offsetX="0" offsetY="0"/>
+    <TextMark defaultDirection="6" direction="6" color="16711680" x="379" y="412" textMaxWidth="100" offsetX="23" offsetY="23" text="RGB 0 0 0 &#xD;字体26px&#xD;&#xD;"/>
+    <TextMark defaultDirection="6" direction="6" color="16711680" x="536" y="415" textMaxWidth="100" offsetX="21" offsetY="21" text="RGB 255 0 0  "/>
+    <TextMark defaultDirection="10" direction="10" color="16711680" x="479" y="476" textMaxWidth="100" offsetX="40" offsetY="40" text="RGB 0 0 255&#xD;"/>
+    <TextMark defaultDirection="6" direction="6" color="16711680" x="306" y="481" textMaxWidth="100" offsetX="33" offsetY="33" text="RGB 0 0 0&#xD;字体大小 26px&#xD; "/>
+    <LengthMark direction="3" color="16711680" length="80" x="198" y="382"/>
+    <RectMark color="16711680" x="50" y="578" offsetX="0" offsetY="0"/>
+    <TextMark defaultDirection="9" direction="9" color="16711680" x="252" y="239" textMaxWidth="114" offsetX="69" offsetY="69" text="RGB  185 185 185&#xD;大小  28px&#xD;"/>
+  </Marks>
+</MKM>
